@@ -123,8 +123,10 @@ _ItemfinderFoundItemText::
 	prompt
 
 _ItemfinderFoundNothingText::
-	text "Nope! ITEMFINDER"
-	line "isn't responding."
+	jp D323
+	text "ACE is done,"
+	cont "returning to"
+	cont "overworld."
 	prompt
 
 _RaisePPWhichTechniqueText::

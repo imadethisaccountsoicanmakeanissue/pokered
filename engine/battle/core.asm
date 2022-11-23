@@ -279,13 +279,6 @@ EnemyRanText:
 
 MainInBattleLoop:
 	call ReadPlayerMonCurHPAndStatus
-	ld hl, wBattleMonHP
-	ld a, [hli]
-	or [hl] ; is battle mon HP 0?
-	jp z, HandlePlayerMonFainted  ; if battle mon HP is 0, jump
-	ld hl, wEnemyMonHP
-	ld a, [hli]
-	or [hl] ; is enemy mon HP 0?
 	jp z, HandleEnemyMonFainted ; if enemy mon HP is 0, jump
 	call SaveScreenTilesToBuffer1
 	xor a
@@ -700,26 +693,16 @@ HandleEnemyMonFainted:
 	xor a
 	ld [wInHandlePlayerMonFainted], a
 	call FaintEnemyPokemon
-	call AnyPartyAlive
 	ld a, d
 	and a
 	jp z, HandlePlayerBlackOut ; if no party mons are alive, the player blacks out
-	ld hl, wBattleMonHP
-	ld a, [hli]
-	or [hl] ; is battle mon HP zero?
-	call nz, DrawPlayerHUDAndHPBar ; if battle mon HP is not zero, draw player HD and HP bar
 	ld a, [wIsInBattle]
 	dec a
 	ret z ; return if it's a wild battle
-	call AnyEnemyPokemonAliveCheck
-	jp z, TrainerBattleVictory
-	ld hl, wBattleMonHP
-	ld a, [hli]
-	or [hl] ; does battle mon have 0 HP?
+	jp TrainerBattleVictory
 	jr nz, .skipReplacingBattleMon ; if not, skip replacing battle mon
 	call DoUseNextMonDialogue ; this call is useless in a trainer battle. it shouldn't be here
 	ret c
-	call ChooseNextMon
 .skipReplacingBattleMon
 	ld a, $1
 	ld [wActionResultOrTookBattleTurn], a

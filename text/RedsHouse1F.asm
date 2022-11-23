@@ -2,25 +2,28 @@ _MomWakeUpText::
 	text "MOM: Right."
 	line "All boys leave"
 	cont "home some day."
-	cont "It said so on TV."
+	cont "Atleast i think."
 
-	para "PROF.OAK, next"
-	line "door, is looking"
-	cont "for you."
+	para "# OAK, next"
+	line "door, hates you."
+	cont "go."
 	done
 
 _MomHealText1::
 	text "MOM: <PLAYER>!"
-	line "You should take a"
-	cont "quick rest."
+	line "GO TO SLEEP"
+	cont "RIGHT THE FUCK"
+	cont "NOW!!!!!!!!!!!"
 	prompt
 
 _MomHealText2::
-	text "MOM: Oh good!"
-	line "You and your"
-	cont "#MON are"
-	cont "looking great!"
-	cont "Take care now!"
+	text "MOM: YES!!!!!"
+	line "YOUR"
+	cont "##MON ARE"
+	cont "LOOKING"
+	cont "FUCKING"
+	cont "CRICKETLY!"
+	cont "go."
 	done
 
 _StandByMeText::
@@ -29,9 +32,9 @@ _StandByMeText::
 	cont "are walking on"
 	cont "railroad tracks."
 
-	para "I better go too."
+	para "they got ran over."
 	done
 
 _TVWrongSideText::
-	text "Oops, wrong side."
+	text "Oops, ??."
 	done

@@ -20,9 +20,9 @@ _Route1Text_1cae8::
 	text_end
 
 _Route1Text_1caee::
-	text "We also carry"
-	line "# BALLs for"
-	cont "catching #MON!"
+	text "We also fuck"
+	line "#MON for"
+	cont "uhh?"
 	done
 
 _Route1Text_1caf3::
